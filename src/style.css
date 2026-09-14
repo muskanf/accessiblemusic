@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 2rem;
+  font-family: system-ui, sans-serif;
+  background: #f7f7f7;
+  color: #111;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 4px;
+  margin-top: 2rem;
+}
+
+.grid-cell {
+  aspect-ratio: 1;
+  border: 1px solid #555;
+  background: white;
+  cursor: pointer;
+  font: inherit;
+}
+
+.grid-cell:hover {
+  background: #eee;
+}
+
+.grid-cell:focus {
+  outline: 4px solid black;
+  outline-offset: 2px;
+}

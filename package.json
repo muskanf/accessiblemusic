@@ -1,0 +1,24 @@
+{
+  "name": "accessiblemusic",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/muskanf/accessiblemusic#readme",
+  "bugs": {
+    "url": "https://github.com/muskanf/accessiblemusic/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muskanf/accessiblemusic.git"
+  },
+  "license": "ISC",
+  "author": "muskan fatima",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "vite": "^8.3.0"
+  }
+}
