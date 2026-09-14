@@ -14,9 +14,10 @@
   "author": "muskan fatima",
   "type": "commonjs",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+ "scripts": {
+  "dev": "vite",
+  "build": "vite build"
+},
   "keywords": [],
   "devDependencies": {
     "vite": "^8.3.0"
