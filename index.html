@@ -2,22 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
   />
-  <title>Grid</title>
+
+  <title>grid</title>
 </head>
 
 <body>
   <main>
-    <h1>Accessible Grid</h1>
+    <h1>grid</h1>
 
     <p>
-      Press tab
+      Navigate through the table and check boxes to create a sequence.
     </p>
 
-    <div id="grid" class="grid" aria-label="Interactive grid"></div>
+    <table id="grid">
+      <caption>
+        3 by 8 music sequence grid
+      </caption>
+
+      <thead>
+        <tr id="column-headers">
+          <th scope="col">Row</th>
+        </tr>
+      </thead>
+
+      <tbody id="grid-body">
+      </tbody>
+    </table>
+
+    <!--
+      Screen-reader announcements are placed here.
+      It is visually hidden, but assistive technology can read it.
+    -->
+    <div
+      id="screen-reader-status"
+      class="sr-only"
+      aria-live="polite"
+      aria-atomic="true"
+    ></div>
   </main>
 
   <script type="module" src="/src/main.js"></script>

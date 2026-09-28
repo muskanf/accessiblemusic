@@ -11,30 +11,66 @@ body {
 }
 
 main {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  gap: 4px;
+table {
+  width: 100%;
   margin-top: 2rem;
-}
-
-.grid-cell {
-  aspect-ratio: 1;
-  border: 1px solid #555;
+  border-collapse: collapse;
   background: white;
-  cursor: pointer;
-  font: inherit;
 }
 
-.grid-cell:hover {
+caption {
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 0.75rem;
+  border: 1px solid #555;
+  text-align: center;
+}
+
+th {
   background: #eee;
 }
 
-.grid-cell:focus {
+.grid-checkbox {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
+
+.grid-checkbox:focus-visible,
+button:focus-visible {
   outline: 4px solid black;
-  outline-offset: 2px;
+  outline-offset: 3px;
+}
+
+button {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #555;
+  background: white;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #eee;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
