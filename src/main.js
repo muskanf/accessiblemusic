@@ -63,8 +63,6 @@ for (let row = 0; row < rows; row++) {
     checkbox.addEventListener("change", () => {
       matrix[row][column] =
         checkbox.checked ? 1 : 0;
-      // For now, print it so we can see
-      // whether the matrix is updating.
       console.log(matrix);
     });
     tableCell.appendChild(checkbox);
@@ -91,11 +89,7 @@ function readRow(row) {
   const rowValues = matrix[row];
   // Convert:
   //
-  // [1, 0, 0, 1]
-  //
-  // into:
-  //
-  // "one zero zero one"
+  // [1, 0, 0, 1] -> "one zero zero one"
 
   const spokenValues = rowValues
     .map(value => value === 1 ? "one" : "zero")
@@ -109,5 +103,3 @@ function readRow(row) {
     screenReaderStatus.textContent = message;
   });
 }
-// testing in console
-window.matrix = matrix;
