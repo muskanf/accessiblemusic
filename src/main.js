@@ -1,11 +1,7 @@
 import "./style.css";
 const rows = 3;
 const columns = 8;
-// MATRIX
-// Each row starts as:
-// [0, 0, 0, 0, 0, 0, 0, 0]
-// 0 = checkbox is off
-// 1 = checkbox is on
+// filling the matrx with zeros
 const matrix = Array.from(
   { length: rows },
   () => Array(columns).fill(0)
