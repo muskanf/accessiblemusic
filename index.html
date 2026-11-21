@@ -1,50 +1,119 @@
+
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
-
-  <title>grid</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Accessible Drum Sequencer</title>
 </head>
-
 <body>
   <main>
-    <h1>grid</h1>
+    <h1 class="sr-only">Accessible Drum Sequencer</h1>
 
-    <p>
-      Navigate through the table and check boxes to create a sequence.
-    </p>
+    <button id="settings-button" class="settings-button" type="button"
+      aria-label="Open settings" aria-expanded="false"
+      aria-controls="settings-panel">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 7h16M4 12h16M4 17h16"/>
+      </svg>
+    </button>
 
-    <table id="grid">
-      <caption>
-        3 by 8 music sequence grid
-      </caption>
+    <div id="grid-container">
+      <table id="grid">
+        <caption class="sr-only">Drum sequencer</caption>
+        <thead>
+          <tr id="column-headers">
+            <th scope="col">
+              <span class="sr-only">Instrument</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody id="grid-body"></tbody>
+      </table>
+    </div>
 
-      <thead>
-        <tr id="column-headers">
-          <th scope="col">Row</th>
-        </tr>
-      </thead>
+    <div class="bottom-controls">
+      <button id="play-button" class="transport-button"
+        type="button" aria-label="Play sequence">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M35 20L80 50L35 80Z"/>
+        </svg>
+      </button>
 
-      <tbody id="grid-body">
-      </tbody>
-    </table>
+      <button id="stop-button" class="transport-button"
+        type="button" aria-label="Stop sequence">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <rect x="27" y="27" width="46" height="46" rx="4"/>
+        </svg>
+      </button>
 
-    <!--
-      Screen-reader announcements are placed here.
-      It is visually hidden, but assistive technology can read it.
-    -->
-    <div
-      id="screen-reader-status"
-      class="sr-only"
-      aria-live="polite"
-      aria-atomic="true"
-    ></div>
+      <button id="restart-button" class="transport-button"
+        type="button" aria-label="Clear grid">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M75 35A30 30 0 1 0 80 55"
+            fill="none" stroke="white"
+            stroke-width="9" stroke-linecap="round"/>
+          <path d="M80 15L80 43L54 35Z"/>
+        </svg>
+      </button>
+    </div>
   </main>
+
+  <div id="settings-overlay" class="settings-overlay" hidden></div>
+
+  <aside id="settings-panel" class="settings-panel"
+    aria-label="Sequencer settings" hidden>
+    <div class="panel-header">
+      <h2>Sequencer</h2>
+      <button id="close-settings" class="close-button"
+        type="button" aria-label="Close settings">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 5L19 19M19 5L5 19"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="panel-content">
+      <div class="setting">
+        <label for="rows-select">Instruments</label>
+        <select id="rows-select">
+          <option value="1">1 instrument</option>
+          <option value="2">2 instruments</option>
+          <option value="3" selected>3 instruments</option>
+        </select>
+      </div>
+
+      <div class="setting">
+        <label for="steps-select">Steps</label>
+        <select id="steps-select">
+          <option value="4">4 steps</option>
+          <option value="8" selected>8 steps</option>
+          <option value="16">16 steps</option>
+        </select>
+      </div>
+
+      <div class="setting">
+        <label for="tempo-input">Tempo</label>
+        <div class="tempo-field">
+          <input id="tempo-input" type="number"
+            min="40" max="240" value="120">
+          <span>BPM</span>
+        </div>
+      </div>
+
+      <div class="setting">
+        <label for="audio-select">Navigation audio</label>
+        <select id="audio-select">
+          <option value="on">On</option>
+          <option value="off">Off</option>
+        </select>
+      </div>
+    </div>
+  </aside>
+
+  <div id="screen-reader-status" class="sr-only"
+    role="status" aria-live="polite"
+    aria-atomic="true"></div>
 
   <script type="module" src="/src/main.js"></script>
 </body>
