@@ -1,4 +1,5 @@
 import "./style.css";
+import * as Tone from "tone";
 const rows = 3;
 const columns = 8;
 // filling the matrx with zeros

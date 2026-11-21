@@ -14,12 +14,15 @@
   "author": "muskan fatima",
   "type": "commonjs",
   "main": "index.js",
- "scripts": {
-  "dev": "vite",
-  "build": "vite build"
-},
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
   "keywords": [],
   "devDependencies": {
     "vite": "^8.3.0"
+  },
+  "dependencies": {
+    "tone": "^15.1.22"
   }
 }
